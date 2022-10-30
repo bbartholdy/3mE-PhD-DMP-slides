@@ -1,0 +1,1741 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="part-1_files/libs/clipboard/clipboard.min.js"></script>
+<script src="part-1_files/libs/quarto-html/tabby.min.js"></script>
+<script src="part-1_files/libs/quarto-html/popper.min.js"></script>
+<script src="part-1_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="part-1_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="part-1_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="part-1_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.2.242">
+
+  <meta name="author" content="Me">
+  <title>Data Management Plan Training</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="part-1_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="part-1_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="part-1_files/libs/revealjs/dist/theme/quarto.css" id="theme">
+  <link href="part-1_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="part-1_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="part-1_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="part-1_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-captioned.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-captioned) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-captioned.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-captioned .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-captioned .callout-caption  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-captioned.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-captioned.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-caption {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-caption {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-caption {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-captioned .callout-body > .callout-content > :last-child {
+    margin-bottom: 0.5rem;
+  }
+
+  .callout.callout-captioned .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-captioned) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-caption {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-caption {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-caption {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-caption {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-caption {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-color="#00A6D6" data-background-image="img/TUDelft_logo_white.png" data-background-position="0% 110%" data-background-size="30%" class="quarto-title-block center">
+  <h1 class="title">Data Management Plan Training</h1>
+  <p class="subtitle">3me PhD students - Part 1</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Me 
+</div>
+</div>
+</div>
+
+</section>
+<section>
+<section id="overview" class="title-slide slide level1 center">
+<h1>Overview</h1>
+
+</section>
+<section id="why-are-you-here" class="slide level2 center">
+<h2>Why are you here?</h2>
+<p>Support with Research Data Management Policy requirements:</p>
+<ul>
+<li class="fragment"><p>Attend training in Research Data Management <span class="fragment">✔️</span></p></li>
+<li class="fragment"><p>Data management plan (DMP)</p>
+<ul>
+<li class="fragment">To be written within the first 12 months</li>
+<li class="fragment">approval during go/no-go meeting</li>
+</ul></li>
+<li class="fragment"><p>Data/code archiving requirement</p>
+<ul>
+<li class="fragment">Research data and code supporting the PhD thesis must be uploaded to a repository before graduation</li>
+</ul></li>
+</ul>
+</section>
+<section id="no-seriously-why" class="slide level2 center">
+<h2>No, seriously… why?</h2>
+<div class="fragment">
+<p>Workflow efficiency!</p>
+</div>
+<div class="fragment">
+<p>Early organisation and proper documentation of project and data</p>
+</div>
+<div class="fragment">
+<p>Prevent data loss… <span class="fragment">you never know</span></p>
+<p><img data-src="https://daphartmann.files.wordpress.com/2017/02/tu-delft-bouwkunde-brand-1.jpg" class="fragment absolute" style="top: 100px; right: 260px; width: 400px; "></p>
+<!-- and you get credit (1 GS) -->
+</div>
+</section>
+<section id="who-am-i-to-tell-you-what-to-do" class="slide level2 center" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Who am I to tell you what to do?</h2>
+<p>Interim Data Steward at 3mE</p>
+<div class="fragment">
+<p>PhD student, 5th year<span class="fragment">…ish</span></p>
+</div>
+<div class="fragment">
+<div data-id="text1">
+<p>Did research data management training for my own PhD</p>
+</div>
+</div>
+</section>
+<section id="who-am-i-to-tell-you-what-to-do-1" class="slide level2 center" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Who am I to tell you what to do?</h2>
+<p>Interim Data Steward at 3mE</p>
+<p>PhD student, 5th year…ish</p>
+<div data-id="text1">
+<p>Did <span style="color: red;">not take</span> research data management training for my own PhD</p>
+</div>
+</section>
+<section id="who-am-i-to-tell-you-what-to-do-2" class="slide level2 center" data-auto-animate="false">
+<h2 data-id="quarto-animate-title">Who am I to tell you what to do?</h2>
+<p>Interim Data Steward at 3mE</p>
+<p>PhD student, 5th year…ish</p>
+<div data-id="text1">
+<p>Did <span style="color: red;">not take</span> research data management training for my own PhD</p>
+</div>
+<p>Did regret not doing the training… Learned the importance of RDM the hard way…</p>
+</section>
+<section id="training-schedule" class="slide level2">
+<h2>Training schedule</h2>
+<div class="columns">
+<div class="column">
+<p><strong>Part 1</strong></p>
+<ul>
+<li class="fragment">Intro to research data management
+<ul>
+<li class="fragment">policy requirements</li>
+<li class="fragment">processing personal data</li>
+</ul></li>
+<li class="fragment">Hands-on experience with DMP(online)</li>
+</ul>
+<p><strong>Part 2</strong></p>
+<ul>
+<li class="fragment">Discussing with supervisor (and data steward) and completing the DMP</li>
+</ul>
+</div><div class="column">
+<p><strong>Part 3</strong></p>
+<ul>
+<li class="fragment">Summary of part 1</li>
+<li class="fragment">Re-evaluation of DMPs</li>
+<li class="fragment">Archiving and publishing data and code</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="training-outcomes" class="slide level2 center">
+<h2>Training outcomes</h2>
+<ul>
+<li class="fragment">The importance of proper data
+<ul>
+<li class="fragment">management</li>
+<li class="fragment">storage</li>
+<li class="fragment">documentation</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<ul>
+<li class="fragment">Practical implementation of a DMP
+<ul>
+<li class="fragment">using DMPonline</li>
+</ul></li>
+<li class="fragment">Personal data considerations</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="data-management-plan" class="title-slide slide level1 center" data-background-color="#00A6D6">
+<h1>Data Management Plan</h1>
+
+</section>
+<section id="what" class="slide level2 scrollable">
+<h2>What?</h2>
+<p>Document describing what will happen with…</p>
+<ul>
+<li class="fragment">code</li>
+<li class="fragment">data</li>
+</ul>
+<p>…during the project, including</p>
+<ul>
+<li class="fragment"><a href="#/data-storage">storage</a> and <a href="#/data-backup">backups</a></li>
+<li class="fragment">who has access</li>
+</ul>
+<p>It also determines what happens to code/data after the project</p>
+<ul>
+<li class="fragment">if it will be publicly available</li>
+<li class="fragment">how long data will be stored for future (re)use</li>
+<li class="fragment">who will have access to the data in the long term</li>
+</ul>
+</section>
+<section id="research-data" class="slide level2 center">
+<h2>Research data</h2>
+<blockquote>
+<p>…. data in the form of facts, observations, images, computer program results, recordings, measurements or experiences on which an argument, theory, test or hypothesis, or other research output is based. It relates to data generated, collected, or used, during research projects, and in some cases may include the research output itself. Data may be numerical, descriptive, visual or tactile. It may be raw, cleaned or processed, and may be held in any format or media. Research data, in many disciplines, may by necessity include the software, algorithm, model and/or parameters, used to arrive at the research outcome, in addition to the raw data that the software, algorithm or model is applied to.</p>
+</blockquote>
+<p>- <a href="https://www.mopp.qut.edu.au/D/D_02_08.jsp#D_02_08.10.mdoc">Queensland University of Technology</a></p>
+</section>
+<section id="the-plan" class="slide level2">
+<h2>The plan!</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+<svg width="960" height="480" viewbox="0.00 0.00 471.22 264.80" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style=" display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 260.8)">
+<title>
+G
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-260.8 467.22,-260.8 467.22,4 -4,4"></polygon> <g id="clust1" class="cluster">
+<title>
+cluster_0
+</title>
+<polygon fill="lightgrey" stroke="darkgrey" points="8,-64 8,-140.8 394,-140.8 394,-64 8,-64"></polygon> <text text-anchor="middle" x="201" y="-124.2" font-family="Times,serif" font-size="14.00">Analysis</text> </g> <!-- D --> <g id="node1" class="node">
+<title>
+D
+</title>
+<ellipse fill="none" stroke="black" cx="208" cy="-90" rx="71.26" ry="18"></ellipse> <text text-anchor="middle" x="208" y="-85.8" font-family="Times,serif" font-size="14.00">Version control</text> </g> <!-- F --> <g id="node6" class="node">
+<title>
+F
+</title>
+<ellipse fill="none" stroke="black" cx="208" cy="-18" rx="55.05" ry="18"></ellipse> <text text-anchor="middle" x="208" y="-13.8" font-family="Times,serif" font-size="14.00">Publication</text> </g> <!-- D&#45;&gt;F --> <g id="edge5" class="edge">
+<title>
+D-&gt;F
+</title>
+<path fill="none" stroke="black" d="M208,-71.7C208,-63.98 208,-54.71 208,-46.11"></path> <polygon fill="black" stroke="black" points="211.5,-46.1 208,-36.1 204.5,-46.1 211.5,-46.1"></polygon> </g> <!-- B --> <g id="node2" class="node">
+<title>
+B
+</title>
+<polygon fill="none" stroke="black" points="112.31,-108 15.69,-108 15.69,-72 118.31,-72 118.31,-102 112.31,-108"></polygon> <polyline fill="none" stroke="black" points="112.31,-108 112.31,-102 "></polyline> <polyline fill="none" stroke="black" points="118.31,-102 112.31,-102 "></polyline> <text text-anchor="middle" x="67" y="-85.8" font-family="Times,serif" font-size="14.00">Documentation</text> </g> <!-- B&#45;&gt;F --> <g id="edge6" class="edge">
+<title>
+B-&gt;F
+</title>
+<path fill="none" stroke="black" d="M101.49,-71.88C122.23,-61.58 148.65,-48.46 169.99,-37.87"></path> <polygon fill="black" stroke="black" points="171.69,-40.93 179.09,-33.35 168.58,-34.66 171.69,-40.93"></polygon> </g> <!-- C --> <g id="node3" class="node">
+<title>
+C
+</title>
+<path fill="none" stroke="black" d="M386.19,-104.73C386.19,-106.53 366.39,-108 342,-108 317.61,-108 297.81,-106.53 297.81,-104.73 297.81,-104.73 297.81,-75.27 297.81,-75.27 297.81,-73.47 317.61,-72 342,-72 366.39,-72 386.19,-73.47 386.19,-75.27 386.19,-75.27 386.19,-104.73 386.19,-104.73"></path> <path fill="none" stroke="black" d="M386.19,-104.73C386.19,-102.92 366.39,-101.45 342,-101.45 317.61,-101.45 297.81,-102.92 297.81,-104.73"></path> <text text-anchor="middle" x="342" y="-85.8" font-family="Times,serif" font-size="14.00">Data Storage</text> </g> <!-- E --> <g id="node5" class="node">
+<title>
+E
+</title>
+<polygon fill="none" stroke="black" points="359.21,-36 294.79,-36 294.79,0 359.21,0 359.21,-36"></polygon> <text text-anchor="middle" x="327" y="-13.8" font-family="Times,serif" font-size="14.00">Backups</text> </g> <!-- C&#45;&gt;E --> <g id="edge8" class="edge">
+<title>
+C-&gt;E
+</title>
+<path fill="none" stroke="black" d="M338.29,-71.7C336.64,-63.98 334.65,-54.71 332.81,-46.11"></path> <polygon fill="black" stroke="black" points="336.18,-45.15 330.67,-36.1 329.34,-46.62 336.18,-45.15"></polygon> </g> <!-- C&#45;&gt;F --> <g id="edge7" class="edge">
+<title>
+C-&gt;F
+</title>
+<path fill="none" stroke="black" d="M310.24,-72.41C290.65,-62.17 265.42,-49 244.94,-38.29"></path> <polygon fill="black" stroke="black" points="246.38,-35.1 235.89,-33.57 243.13,-41.3 246.38,-35.1"></polygon> </g> <!-- G --> <g id="node7" class="node">
+<title>
+G
+</title>
+<ellipse fill="none" stroke="black" cx="420" cy="-18" rx="43.44" ry="18"></ellipse> <text text-anchor="middle" x="420" y="-13.8" font-family="Times,serif" font-size="14.00">Security</text> </g> <!-- C&#45;&gt;G --> <g id="edge9" class="edge">
+<title>
+C-&gt;G
+</title>
+<path fill="none" stroke="black" d="M361.28,-71.7C371.45,-62.57 384.04,-51.28 394.95,-41.48"></path> <polygon fill="black" stroke="black" points="397.43,-43.96 402.54,-34.67 392.76,-38.75 397.43,-43.96"></polygon> </g> <!-- A --> <g id="node4" class="node">
+<title>
+A
+</title>
+<ellipse fill="none" stroke="black" cx="208" cy="-238.8" rx="80.53" ry="18"></ellipse> <text text-anchor="middle" x="208" y="-234.6" font-family="Times,serif" font-size="14.00">Conceptualisation</text> </g> <!-- H --> <g id="node8" class="node">
+<title>
+H
+</title>
+<ellipse fill="none" stroke="black" cx="208" cy="-166.8" rx="31.94" ry="18"></ellipse> <text text-anchor="middle" x="208" y="-162.6" font-family="Times,serif" font-size="14.00">DMP</text> </g> <!-- A&#45;&gt;H --> <g id="edge1" class="edge">
+<title>
+A-&gt;H
+</title>
+<path fill="none" stroke="black" d="M208,-220.5C208,-212.78 208,-203.51 208,-194.91"></path> <polygon fill="black" stroke="black" points="211.5,-194.9 208,-184.9 204.5,-194.9 211.5,-194.9"></polygon> </g> <!-- H&#45;&gt;D --> <g id="edge2" class="edge">
+<title>
+H-&gt;D
+</title>
+<path fill="none" stroke="black" d="M208,-148.45C208,-139.58 208,-128.56 208,-118.56"></path> <polygon fill="black" stroke="black" points="211.5,-118.25 208,-108.25 204.5,-118.25 211.5,-118.25"></polygon> </g> <!-- H&#45;&gt;B --> <g id="edge3" class="edge">
+<title>
+H-&gt;B
+</title>
+<path fill="none" stroke="black" d="M178.42,-159.44C162.84,-155.39 143.76,-149.28 128,-140.8 115.15,-133.88 102.4,-124.07 91.91,-114.98"></path> <polygon fill="black" stroke="black" points="94.15,-112.29 84.37,-108.23 89.49,-117.51 94.15,-112.29"></polygon> </g> <!-- H&#45;&gt;C --> <g id="edge4" class="edge">
+<title>
+H-&gt;C
+</title>
+<path fill="none" stroke="black" d="M237.79,-159.82C253.43,-155.88 272.5,-149.75 288,-140.8 299.56,-134.12 310.7,-124.58 319.82,-115.63"></path> <polygon fill="black" stroke="black" points="322.48,-117.92 326.98,-108.33 317.48,-113.02 322.48,-117.92"></polygon> </g> </g>
+</svg>
+</p>
+</div>
+</div>
+</div>
+</section>
+<section id="dmponline" class="slide level2 center">
+<h2>DMPonline</h2>
+<p>DMPonline is an online platform for creating a DMP</p>
+<p>You can log in with your NetID to the <a href="https://dmponline.tudelft.nl/">TU Delft DMPonline</a></p>
+<div class="fragment">
+<p>Here, you can:</p>
+<ul>
+<li class="fragment">Write and update your plan during research</li>
+<li class="fragment">Select from multiple templates (TU Delft, NWO, etc.)</li>
+<li class="fragment">Share your plan with collaborators/supervisor</li>
+<li class="fragment">Request feedback from your faculty <a href="https://www.tudelft.nl/en/library/research-data-management/r/support/data-stewardship/contact">data steward</a></li>
+<li class="fragment">See other plans shared by researchers at TU Delft</li>
+</ul>
+</div>
+<div class="fragment">
+<p>For more instructions, see <a href="https://www.tudelft.nl/en/library/research-data-management/r/plan/dmponline/dmponline">here</a>.</p>
+</div>
+</section></section>
+<section>
+<section id="during-the-project" class="title-slide slide level1 center" data-background-color="#00A6D6" data-background-image="img/rdm-storage.jpg" data-background-size="60%" data-background-position="right" aria-label="Person looking in a closet with various books, folders, locked boxes. Speachbox saying data from last year?">
+<h1>During the project</h1>
+<div class="background-caption" style="right: 100px; bottom: 0px;">
+<p>This illustration is created by Scriberia with The Turing Way community.<br>
+Used under a CC-BY 4.0 licence. DOI: <a href="https://doi.org/10.5281/zenodo.3332807">10.5281/zenodo.3332807</a></p>
+</div>
+</section>
+<section id="data-storage" class="slide level2 scrollable">
+<h2>Data storage</h2>
+<p>Storage options at TU Delft</p>
+<p><a href="https://tudelft.topdesk.net/" class="uri">https://tudelft.topdesk.net/</a> &gt; ICT services &gt; IT for Researchers</p>
+<ul>
+<li class="fragment"><a href="#/ict-data-storage">TU Delft ICT Network drives</a>
+<ul>
+<li class="fragment">Personal Drive (H:)</li>
+<li class="fragment">Staff Group Data (M:)</li>
+<li class="fragment">Project Drive (U:)</li>
+</ul></li>
+<li class="fragment"><a href="#/cloud-data-storage">Cloud Storage</a>
+<ul>
+<li class="fragment">SurfDrive</li>
+<li class="fragment">TU Delft OneDrive</li>
+</ul></li>
+</ul>
+</section>
+<section id="ict-data-storage" class="slide level2 center">
+<h2>TU Delft ICT Network drives</h2>
+<p>These are accessible from the TU Delft network (e.g.&nbsp;via Windows File Explorer)</p>
+<table>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Location</th>
+<th>Storage</th>
+<th>Access</th>
+<th>Suitable for confidential data?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Personal Drive (H:)</td>
+<td>8 GB</td>
+<td>Just you</td>
+<td>Yes (but not research data)</td>
+</tr>
+<tr class="even">
+<td>Staff Group Data (M:)</td>
+<td>50 GB</td>
+<td>Department</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td>Project Data (U:)</td>
+<td>5+ TB</td>
+<td>Managed by drive owner (project PI)</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p>Need more computing power?</p>
+<ul>
+<li class="fragment"><a href="https://tudelft.topdesk.net/tas/public/ssp/content/detail/service?unid=b7e2b7b46ac94cf688c21761aa324fc1&amp;from=60b11439-7ae3-44bb-8537-1dc3278f3642">DelftBlue Supercomputer</a></li>
+</ul>
+</div>
+</section>
+<section id="cloud-data-storage" class="slide level2 center">
+<h2>Cloud drives</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Location</th>
+<th>Storage</th>
+<th>Access</th>
+<th>Suitable for confidential data?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SURFDrive</td>
+<td>500 GB</td>
+<td>Just you (can share files/folders)</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>Microsoft OneDrive</td>
+<td>1 TB</td>
+<td>Just you (can share files/folders)</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="project-drive-storage" class="slide level2 scrollable">
+<h2>Project Drive storage</h2>
+<p><strong>Recommended for project data</strong></p>
+<p>TU Delft ICT Network Drive</p>
+<ul>
+<li class="fragment">reugular backups
+<ul>
+<li class="fragment">standard: 14 days retention</li>
+<li class="fragment">high: 14 days + 53 weeks with redundancy (upon request)</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<p><a href="https://tudelft.topdesk.net/tas/public/ssp/content/serviceflow?unid=21b6203ec6d74f00a45c32e6034dfc0c&amp;from=03aa10b9-c5aa-4e0a-80b1-28ee7ab383df&amp;openedFromService=true">Request form</a></p>
+</div>
+<div class="fragment">
+<p>Should be managed by project leader</p>
+<ul>
+<li class="fragment">access can be given to internal and external users</li>
+</ul>
+</div>
+<div class="fragment">
+<p>Pros:</p>
+<ul>
+<li class="fragment">Data is accessible when researcher leaves lab</li>
+<li class="fragment">Up to 5TB storage (more upon reasonable request)</li>
+<li class="fragment">Can request for multiple projects</li>
+</ul>
+</div>
+<div class="fragment">
+<h3 id="access-outside-tu-delft">Access outside TU Delft</h3>
+<p>Accessed through <a href="https://www.tudelft.nl/en/it-manuals/vpn/">eduVPN</a></p>
+<p>or</p>
+<p><a href="https://webdata.tudelft.nl/">WebDrive/WebDav Web links</a></p>
+</div>
+</section>
+<section id="cloud-storage" class="slide level2 scrollable">
+<h2>Cloud storage</h2>
+<p><a href="https://www.surfdrive.nl/en"><strong>SURFDrive</strong></a></p>
+<ul>
+<li class="fragment">500 GB storage for TU Delft researchers</li>
+<li class="fragment">30 days backup</li>
+<li class="fragment">local desktop application, synchronised with cloud</li>
+<li class="fragment">Flexible sharing possible with external collaborators</li>
+</ul>
+<p><a href="https://onedrive.live.com/"><strong>OneDrive</strong></a></p>
+<ul>
+<li class="fragment">1 TB storage for TU Delft researchers</li>
+<li class="fragment">30 days backup</li>
+<li class="fragment">local desktop application, synchronised with cloud</li>
+<li class="fragment">Flexible sharing possible with external collaborators</li>
+<li class="fragment">Automatic version control</li>
+</ul>
+<p>Other cloud solutions</p>
+<ul>
+<li class="fragment">Dropbox, Google Drive, etc.</li>
+<li class="fragment">Just don’t…</li>
+</ul>
+</section>
+<section id="pros-cons" class="slide level2">
+<h2>Pros-cons</h2>
+<p><strong>TU Delft ICT Network drives</strong></p>
+<ul style="list-style-type: none;">
+<li>
+✔️ Regular backups (3-2-1 rule)
+</li>
+<li>
+✔️ Secure storage
+</li>
+<li>
+✔️ High volume storage (5TB+)
+</li>
+<li>
+❌ Needs internet connection (and EduVPN)
+</li>
+<li>
+❌ Can’t share single files/folders (all or nothing)
+</li>
+</ul>
+<p><strong>Cloud drives</strong></p>
+<ul style="list-style-type: none;">
+<li>
+✔️ Synchronisation with local device
+</li>
+<li>
+✔️ Version controlled
+</li>
+<li>
+✔️ Advanced sharing
+</li>
+<li>
+❌ Not secure, not appropriate for sensitive/personal data<br>
+
+</li><li>
+❌ Not compliant with 3-2-1 backup<br>
+
+</li><li>
+❌ Account deleted shortly after researcher leaves
+</li></ul>
+</section>
+<section id="data-backup" class="slide level2 center">
+<h2>Backups</h2>
+<p>3-2-1 backup rule-of-thumb</p>
+<div class="fragment">
+<p><strong>3 copies</strong> of the data (1 primary, 2 backups)</p>
+</div>
+<div class="fragment">
+<p><strong>2 different storage media</strong> (e.g.&nbsp;external hard drive and laptop)</p>
+</div>
+<div class="fragment">
+<p><strong>1 copy</strong> stored offsite (different geographical location)</p>
+</div>
+</section>
+<section id="data-sharing" class="slide level2 center">
+<h2>Data sharing</h2>
+<p><a href="https://www.surf.nl/en/surffilesender-send-large-files-securely-and-encrypted">SURFfilesender</a></p>
+<ul>
+<li class="fragment">up to 1 TB</li>
+<li class="fragment">End-to-end encryption up to 2 GB</li>
+</ul>
+</section>
+<section id="projectdata-organisation" class="slide level2">
+<h2>Project/data organisation</h2>
+<p>Look familiar?</p>
+
+<img data-src="img/messy-structure.png" class="r-stretch"><div class="fragment">
+<p>Can you walk away from your project for days, weeks, months,</p>
+<p>and come back and know what everything is?</p>
+</div>
+<div class="fragment">
+<p>Spend some time thinking about how you will organise yourself.</p>
+<p>Your future self will thank you…</p>
+</div>
+</section>
+<section id="project-structure" class="slide level2">
+<h2>Project structure</h2>
+<p>Projects should be contained within folders in a meaningful place</p>
+<pre><code>📁 project_name
+    📄 README
+    📁data
+      📄 raw-data_exp01.csv
+      📄 raw-data_exp02.csv  
+    📁analysis
+      📄 analysis-script.R
+    📁reports
+      📄 results-of-analysis.Rmd
+    📁publication
+      📄 manuscript_v1.docx</code></pre>
+<div class="fragment">
+<ul style="list-style-type: none;">
+<li>
+✔️ Could be in home directory (<code>~/Documents/Project_name</code>)
+</li>
+<li>
+✔️ Could be in the cloud (<code>OneDrive/Project_name</code>)
+</li>
+<li>
+❌ NOT on the Desktop
+</li>
+</ul>
+</div>
+</section>
+<section id="project-templates" class="slide level2">
+<h2>Project templates</h2>
+<p>There are many pre-existing templates out there that can help you</p>
+<p><a href="https://github.com/djnavarro/newproject/" class="uri">https://github.com/djnavarro/newproject/</a></p>
+
+<img data-src="img/dj-navarro_structure.png" class="r-stretch"></section>
+<section id="project-templates-1" class="slide level2 scrollable">
+<h2>Project templates</h2>
+<p>There are many pre-existing templates out there that can help you</p>
+<p><a href="https://github.com/bvreede/good-enough-project" class="uri">https://github.com/bvreede/good-enough-project</a></p>
+<pre><code>.
+├── .gitignore
+├── CITATION.md
+├── LICENSE.md
+├── README.md
+├── requirements.txt
+├── bin                &lt;- Compiled and external code, ignored by git (PG)
+│   └── external       &lt;- Any external source code, ignored by git (RO)
+├── config             &lt;- Configuration files (HW)
+├── data               &lt;- All project data, ignored by git
+│   ├── processed      &lt;- The final, canonical data sets for modeling. (PG)
+│   ├── raw            &lt;- The original, immutable data dump. (RO)
+│   └── temp           &lt;- Intermediate data that has been transformed. (PG)
+├── docs               &lt;- Documentation notebook for users (HW)
+│   ├── manuscript     &lt;- Manuscript source, e.g., LaTeX, Markdown, etc. (HW)
+│&nbsp;&nbsp; └── reports        &lt;- Other project reports and notebooks (e.g. Jupyter, .Rmd) (HW)
+├── results
+│   ├── figures        &lt;- Figures for the manuscript or reports (PG)
+│&nbsp;&nbsp; └── output         &lt;- Other output for the manuscript or reports (PG)
+└── src                &lt;- Source code for this project (HW)</code></pre>
+</section>
+<section id="project-templates-2" class="slide level2 scrollable">
+<h2>Project templates</h2>
+<p>There are many pre-existing templates out there that can help you</p>
+<p><a href="https://github.com/paleobiotechnology/analysis-project-structure" class="uri">https://github.com/paleobiotechnology/analysis-project-structure</a></p>
+<pre><code>README.md
+conda_environment.yml
+.gitignore
+01-documentation/
+├──document_1.txt
+└──document_2.tsv
+02-scripts
+├──ANA-script.sh
+├──ANA-notebook.Rmd
+├──QUAL-script.sh
+└──QUAL-notebook.Rmd
+03-data/
+├──raw_data
+├──published_data
+├──reference_genomes
+└──databases/
+    └──&lt;database_1&gt;/
+04-analysis/
+├──analysis_1/
+│  ├──sub-step
+│  └──sub-step
+└──analysis_2/
+   ├──sub-step
+   └──sub-step
+05-results/
+├──ANA-final_file.tsv
+├──ANA-final_file.Rdata
+├──QUAL-tool_output.csv
+└──QUAL-tool_output.Rdata
+06-reports/
+├──ANA/
+│  ├──final_rmarkdown_figures/
+│  ├──final_rmarkdown.Rmd
+│  └──final_rmarkdown.html
+└──QUAL/
+   ├──final_rmarkdown_figures/
+   ├──final_rmarkdown.Rmd
+   └──final_rmarkdown.html
+07-publication/
+├──figures
+├──supplementary_figures/
+├──supplementary_files/
+├──sequencingdata_upload/
+└──final_paper.Rmd</code></pre>
+</section>
+<section id="project-templates-3" class="slide level2 scrollable">
+<h2>Project templates</h2>
+<p>There are many pre-existing templates out there that can help you</p>
+<p>Just be consistent and transparent</p>
+</section>
+<section id="file-naming" class="slide level2">
+<h2>File naming</h2>
+<p>I know, I know, could there BE a more boring topic…</p>
+<p>It is pretty essential, though. Follow these rules and she’ll be right 👍:</p>
+<ul>
+<li class="fragment">Use dates where applicable: YYYY-MM-DD (ISO 8601 format)
+<ul>
+<li class="fragment">Use them at the beginning of the file name so it arranges by date</li>
+</ul></li>
+<li class="fragment">Be descriptive, but brief</li>
+<li class="fragment">Using a version number (not ‘final’ - there’s no such thing as a final version…)</li>
+<li class="fragment">Avoid spaces and special characters (exceptions: <code>_</code> and <code>-</code>)
+<ul>
+<li class="fragment">separate related words with <code>-</code> and chunks with <code>_</code></li>
+</ul></li>
+<li class="fragment">Avoid case-sensitivity (SomE operAting SystEms cARE, some don’t)</li>
+</ul>
+</section>
+<section id="file-naming-continued" class="slide level2 center">
+<h2>File naming continued</h2>
+<p>Good examples:</p>
+<p><code>analysis01_descriptive-statistics.R</code><br>
+<code>analysis02_preregistered-analysis.py</code><br>
+<code>2009-01-01_original-analysis.R</code></p>
+<p>Bad examples:</p>
+<p><code>essay "romeo and juliet" draft01(1).docx</code><br>
+<code>1-April-2012 supervisor comments on final draft.docx</code></p>
+<p><span style="font-size: x-small;">From <a href="https://djnavarro.net/slides-project-structure/#1" class="uri">https://djnavarro.net/slides-project-structure/#1</a></span></p>
+</section>
+<section id="version-control" class="slide level2" data-background-image="img/project-history.jpg" data-background-size="40%" data-background-position="80% 50%">
+<h2>Version control</h2>
+<p>By using a version control system (VCS - git is most widely used), you can:</p>
+<ul>
+<li class="fragment">record changes to file(s) over time</li>
+<li class="fragment">revert selected files back to a previous state</li>
+<li class="fragment">revert the entire project back to a previous state</li>
+<li class="fragment">compare changes over time</li>
+<li class="fragment">see who last modified something, when, and more</li>
+</ul>
+<p><img data-src="img/github-diff.png" class="fragment absolute" style="top: 150px; right: 50px; "></p>
+<div class="background-caption" style="right: 0px; bottom: 0px;">
+<p>This illustration is created by Scriberia with The Turing Way community.<br>
+Used under a CC-BY 4.0 licence. DOI: <a href="https://doi.org/10.5281/zenodo.3332807">10.5281/zenodo.3332807</a></p>
+</div>
+</section>
+<section id="version-control-hosting-services" class="slide level2">
+<h2>Version control hosting services</h2>
+<h3 id="github">GitHub <img data-src="img/GitHub-Mark-64px.png" class="absolute" style="top: 46px; right: 840px; "></h3>
+<ul>
+<li class="fragment">Popular host for developing open-source (and closed-source) projects</li>
+<li class="fragment">share with nobody (Microsoft), collaborators, everybody</li>
+<li class="fragment">Free account for individuals</li>
+</ul>
+<p><br></p>
+<h3 id="gitlab">GitLab <img data-src="img/gitlab-logo.png" class="absolute" style="top: 310px; right: 840px; width: 64px; "></h3>
+<ul>
+<li class="fragment">Similar interface to GitHub</li>
+<li class="fragment">TU Delft provides own server (secure for sensitive data)</li>
+<li class="fragment">Share with nobody, collaborators, all TU Delft researchers, everybody</li>
+<li class="fragment">Free account for individuals</li>
+</ul>
+</section>
+<section id="vcs-hosting-services" class="slide level2 center">
+<h2>VCS hosting services</h2>
+<p>They are NOT a certified repository for long-term storage</p>
+<p>They do NOT assign DOIs</p>
+<div class="fragment">
+<p>They CAN be connected with certified repositories</p>
+<p>Snapshots of the repo will be taken and assigned a DOI</p>
+</div>
+</section>
+<section id="documentation" class="slide level2">
+<h2>Documentation</h2>
+<h3 id="what-to-document">What to document</h3>
+<ul>
+<li class="fragment">How to navigate the project</li>
+<li class="fragment">How to (re-)use code and data</li>
+</ul>
+<div class="fragment">
+<p>Ask yourself: can someone with access to your project folder, reproduce exactly your findings?</p>
+</div>
+<div class="fragment">
+<p>That someone may be your future self!</p>
+</div>
+<h3 id="in-practice">In practice</h3>
+<ul>
+<li class="fragment">Metadata embedded in files (instrument-specific)</li>
+<li class="fragment">Paper or (preferably) electronic lab notebooks</li>
+<li class="fragment">README file(s) in project folder</li>
+<li class="fragment">Code annotation/software instructions</li>
+<li class="fragment">Upload your data to repositories with discovery metadata</li>
+<li class="fragment">Use disciplinary metadata standards (may or may not exist for your discipline)</li>
+</ul>
+</section>
+<section id="documentation-1" class="slide level2">
+<h2>Documentation</h2>
+<h3 id="lab-notebooks">Lab notebooks</h3>
+<p>Conventionally kept in physical notebooks in lab or PIs office</p>
+<div class="fragment">
+<p>This has some limitations</p>
+<ul>
+<li class="fragment">does not relocate easily</li>
+<li class="fragment">depends on handwriting legibility</li>
+<li class="fragment">often not standardised</li>
+</ul>
+</div>
+</section>
+<section id="documentation-3" class="slide level2" data-background-image="img/e-labnotebooks.jpg" data-background-position="90% 30%" data-background-size="50%">
+<h2>Documentation</h2>
+<h3 id="electronic-notebooks">Electronic notebooks</h3>
+<p>Several beneficial functionalities</p>
+<ul>
+<li class="fragment">text editor</li>
+<li class="fragment">spreadsheet tools</li>
+<li class="fragment">protocol templates</li>
+<li class="fragment">lab inventories</li>
+<li class="fragment">sharing/collaboration options</li>
+<li class="fragment">lab equipment/workflow managers</li>
+<li class="fragment">integration with other resources (e.g.&nbsp;SURFDrive, OneDrive, and GitHub)</li>
+<li class="fragment">version controlled</li>
+</ul>
+<div class="fragment">
+<p><a href="https://www.tudelft.nl/en/library/research-data-management/r/manage/electronic-lab-notebook">TU Delft</a> has software licenses for <a href="https://www.researchspace.com/">RSpace</a> and <a href="https://www.elabjournal.com/add-ons/">eLABJournal</a></p>
+<div style="position: fixed; font-size: x-small; font-weight: lighter; bottom: 0; right: 0;">
+<p>Illustrated by <a href="https://openworking.wordpress.com/2019/07/05/keep-calm-and-go-paperless-electronic-lab-notebooks-can-improve-your-research/">Connie Clare</a></p>
+</div>
+</div>
+</section>
+<section id="documentation-4" class="slide level2">
+<h2>Documentation</h2>
+<h3 class="scrollable" id="readme">README</h3>
+<p>File(s) (<em>.txt</em>, <em>.md</em>, <em>.pdf</em>) that are stored at the root of your project or data directory</p>
+<p>Contain:</p>
+<ul>
+<li class="fragment">Introductory information
+<ul>
+<li class="fragment">context of project</li>
+</ul></li>
+<li class="fragment">Data-specific information
+<ul>
+<li class="fragment">download/access instructions</li>
+<li class="fragment">re-use and citation (license)</li>
+<li class="fragment">variable name and discription</li>
+<li class="fragment">units of measurement</li>
+<li class="fragment">codes and abbreviations</li>
+<li class="fragment">Methodology
+<ul>
+<li class="fragment">methods for generating the data</li>
+<li class="fragment">methods for processing the data</li>
+<li class="fragment">or link to where this information can be found</li>
+</ul></li>
+</ul></li>
+<li class="fragment">Code-specific information
+<ul>
+<li class="fragment">installation/download instructions</li>
+<li class="fragment">re-use and citation (license)</li>
+<li class="fragment">Issue/bug reporting and contributing guidelines</li>
+</ul></li>
+</ul>
+</section>
+<section id="metadata" class="slide level2">
+<h2>Metadata</h2>
+<p>Data about data</p>
+<h3 id="embedded-metadata">Embedded metadata</h3>
+<p><strong>FASTQ</strong> files - <em>.txt</em> format used in life sciences (bioinformatics in particular) which store information about nucleotide sequence</p>
+<p><strong>TIFF</strong> files - <em>.tiff</em> format often contain additional information about images and how these were recorded</p>
+<p><strong>FITS</strong> files - file standard widely used in astronomy to store images and tables. FITS files contain a headers with metadata with information about the data</p>
+<p>Examples from https://www.tudelft.nl/en/library/research-data-management/r/manage/collect-and-document</p>
+</section>
+<section id="spreadsheet-organistion" class="slide level2">
+<h2>Spreadsheet organistion</h2>
+<p>Raw data… <span class="fragment">DO NOT TOUCH</span></p>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://media.giphy.com/media/3oKIP657aH5QRMkX3q/giphy.gif" width="450"></p>
+<p></p><figcaption>GIPHY</figcaption><p></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="spreadsheet-organistion-1" class="slide level2">
+<h2>Spreadsheet organistion</h2>
+<p>Raw data… DO NOT TOUCH</p>
+<p>Make a copy of the raw data to perform calculations and analysis</p>
+<ul>
+<li class="fragment">or, ideally, use a scripting language and export derived data</li>
+</ul>
+</section>
+<section id="spreadsheet-organisation" class="slide level2">
+<h2>Spreadsheet organisation</h2>
+<p>One row per case</p>
+<p>One column per variable</p>
+<p>One cell per observation</p>
+<p>Variable naming</p>
+<ul style="list-style-type: none;">
+<li>
+✔️ use snake_case or camelCase
+</li>
+<li>
+✔️ meaningful names (but short)
+</li>
+<li>
+❌ No special characters or spaces
+</li>
+<li>
+❌ start with letter (not number)
+</li>
+</ul>
+</section>
+<section id="code-notebooks-1" class="slide level2 center" data-background-image="img/rnotebook-source.png" data-background-position="90% 50%" data-background-size="40%">
+<h2>Code notebooks</h2>
+<h3 id="r-notebookr-markdown"><a href="https://rmarkdown.rstudio.com/">R Notebook/R Markdown</a></h3>
+<p>Combine your analysis code and<br>
+output in a single document!</p>
+<p><a href="https://rmarkdown.rstudio.com/" class="uri">https://rmarkdown.rstudio.com/</a></p>
+</section>
+<section id="code-notebooks-2" class="slide level2 center" data-background-image="img/notebook-running-code.png" data-background-position="90% 50%" data-background-size="60%">
+<h2>Code notebooks</h2>
+<h3 id="jupyter-notebook"><a href="https://jupyter.org/">Jupyter notebook</a></h3>
+<p>For Python users! 🐍</p>
+<p><a href="https://jupyter.org/" class="uri">https://jupyter.org/</a></p>
+</section>
+<section id="code-notebooks" class="slide level2">
+<h2>Code notebooks</h2>
+<h3 id="quarto"><a href="https://quarto.org">Quarto</a></h3>
+<p>If you just can’t choose!</p>
+<p><img data-src="img/r-notebook-quarto.png" class="absolute" style="top: 180px; width: 500px; "> <img data-src="img/hello-knitr.png" class="absolute" style="border: 1px solid black;top: 300px; left: 248px; width: 250px; "></p>
+<p><img data-src="img/python-notebook-quarto.png" class="absolute" style="top: 0px; right: 0px; width: 500px; "> <img data-src="img/hello-jupyter.png" class="absolute" style="border: 1px solid black;top: 190px; right: 0px; width: 250px; "></p>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+
+<img data-src="img/training-researchers.png" class="r-stretch"><p>See courses and workshops <a href="https://www.tudelft.nl/en/library/research-data-management/r/training-events/training-for-researchers">here</a></p>
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<p>Project organisation - give it some thought</p>
+<ul>
+<li class="fragment">documentation</li>
+<li class="fragment">code notebooks</li>
+<li class="fragment">lab notebooks</li>
+<li class="fragment">version control</li>
+</ul>
+<p>Data storage</p>
+<ul>
+<li class="fragment">security</li>
+<li class="fragment">backups</li>
+<li class="fragment">metadata standards for your field</li>
+</ul>
+</section>
+<section id="personal-data" class="slide level2 scrollable">
+<h2>Personal data</h2>
+<p>What is considered personal data?</p>
+<ul>
+<li class="fragment"><p>“Personal Data” (GDPR, Article 4): any information relating to an identified or identifiable natural person</p></li>
+<li class="fragment"><p>a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person</p></li>
+</ul>
+<div class="fragment">
+<h3 id="direct-vs.-indirect-identifiers">Direct vs.&nbsp;indirect identifiers</h3>
+<p><strong>Direct identifiers:</strong> information that relates specifically to an individual such as the individual’s residence.</p>
+<ul>
+<li class="fragment">name, address, BSN or other identifying number or code, telephone number, e-mail address, biometric record</li>
+</ul>
+<div class="fragment">
+<p><strong>Indirect identifiers:</strong> information that can be combined with other information to identify specific individuals a combination of gender, birth date, geographic indicator and other descriptors. place of birth, race, religion, weight, activities, employment information, medical information, education information, and financial information</p>
+</div>
+</div>
+</section>
+<section id="working-with-personal-data" class="slide level2 center">
+<h2>Working with personal data</h2>
+<p>Anyone working with human participants will have to submit an application to the <a href="https://www.tudelft.nl/en/about-tu-delft/strategy/integrity-policy/human-research-ethics/hrec-approval-1-application">Human Research Ethics Committee (HREC)</a>.</p>
+<div class="fragment">
+<p>For the application you will need to:</p>
+<ul>
+<li class="fragment">Create an <a href="https://www.tudelft.nl/over-tu-delft/strategie/integriteitsbeleid/human-research-ethics/informed-consent-templates-and-guide">informed consent form</a></li>
+<li class="fragment">Fill out the <a href="https://d2k0ddhflgrk1i.cloudfront.net/TUDelft/Over_TU_Delft/Strategie/Integriteitsbeleid/11_HRX-checklist%20for%20human%20research.docx">HREC checklist</a></li>
+<li class="fragment">Create a Data Management Plan using the TUDelft template</li>
+</ul>
+</div>
+</section>
+<section id="working-with-personal-data-1" class="slide level2 center">
+<h2>Working with personal data</h2>
+<div class="fragment">
+<p>Collect only what you need (and what you informed participants you would collect)</p>
+</div>
+<div class="fragment">
+<p>Access to personal data is restricted to only those who need to process them</p>
+</div>
+<div class="fragment">
+<p>Data should be stored in a secure location (e.g.&nbsp;Project Drive)</p>
+</div>
+<div class="fragment">
+<p>Informed consent forms should be securely stored</p>
+<ul>
+<li class="fragment">paper forms: locked storage</li>
+<li class="fragment">digital forms: encrypted and separated from the other personal data</li>
+</ul>
+</div>
+</section>
+<section id="working-with-personal-data-2" class="slide level2 center">
+<h2>Working with personal data</h2>
+<h3 id="anonymisation-vs.-pseudonymisation">Anonymisation vs.&nbsp;pseudonymisation</h3>
+<p><strong>Pseudonymisation:</strong> assign a unique participant number to each participant on the corresponding informed consent form or a separate key document. Use participant number (not their names), during data collection &amp; analysis. This is not anonymization, since it is possible to trace each unique participant number to the corresponding participant.</p>
+<ul>
+<li class="fragment">Key document needs to be stored in a separate and secure location (e.g.&nbsp;with the informed consent forms).</li>
+</ul>
+<div class="fragment">
+<p><strong>Anonymisation:</strong> Full anonymization is often difficult to achieve. It might be still possible to identify a specific individual by putting together indirect identifiers. Easier to achieve by data aggregation.</p>
+</div>
+</section></section>
+<section>
+<section id="after-the-project" class="title-slide slide level1 center" data-background-color="#00A6D6" data-background-image="img/archive-or-publish.jpg" data-background-position="right" data-background-size="60%">
+<h1>After the Project</h1>
+<div style="position: fixed; font-size: x-small; font-weight: lighter; bottom: 0; right: 0;">
+<p>This illustration is created by Scriberia with The Turing Way community.<br>
+Used under a CC-BY 4.0 licence. DOI: <a href="https://doi.org/10.5281/zenodo.3332807">10.5281/zenodo.3332807</a></p>
+</div>
+</section>
+<section id="archiving-datacode" class="slide level2 center">
+<h2>Archiving data/code</h2>
+<p>As a PhD student you are resposible for:</p>
+<blockquote>
+<p>Ensuring that all data and code underlying completed PhD theses are appropriately documented and accessible for at least 10 years from the end of the research project, in accordance with the FAIR principles (Findable, Accessible, Interoperable and Reusable), unless there are valid reasons which make research data unsuitable for sharing.</p>
+</blockquote>
+<p>- <a href="https://d2k0ddhflgrk1i.cloudfront.net/Library/Themaportalen/RDM/Beleid/2020_3mE_Research_Data_Management_Policy.pdf">3mE RDM Policy</a></p>
+</section>
+<section id="publishing-datacode" class="slide level2">
+<h2>Publishing data/code</h2>
+<blockquote>
+<p>Data are available upon request to corresponding author.</p>
+</blockquote>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://media.giphy.com/media/5fBH6zf7l8bxukYh74Q/giphy.gif"></p>
+<p></p><figcaption>GIPHY</figcaption><p></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="publishing-data" class="slide level2">
+<h2>Publishing data</h2>
+<h3 id="be-fair">Be FAIR</h3>
+<p><img data-src="img/FAIRdataprinciples_foster.png" height="250"></p>
+<p><strong>F</strong>indable - persistent identifier (e.g.&nbsp;DOI) and detailed metadata<br>
+<strong>A</strong>ccessible - long-term accessibility of data (or just metadata if restricted)<br>
+<strong>I</strong>nteroperable - non-proprietary file formats<br>
+<strong>R</strong>eusable - proper documentation and clear license</p>
+<div style="position: fixed; font-size: x-small; font-weight: lighter; bottom: 0; right: 0;">
+<p>Image: https://book.fosteropenscience.eu/</p>
+</div>
+</section>
+<section id="publishing-data-1" class="slide level2">
+<h2>Publishing data</h2>
+<h3 id="and-care">and CARE</h3>
+
+<img data-src="img/care-principles.png" width="250" class="r-stretch"><p><span class="fragment"><strong>C</strong>ollective benefit - inclusive development and equitable outcomes</span><br>
+<span class="fragment"><strong>A</strong>uthority to control - Rights, interests, and governance</span><br>
+<span class="fragment"><strong>R</strong>esponsibility - respect, reciprocity, and trust</span><br>
+<span class="fragment"><strong>E</strong>thics - minimising harm and maximising benefit</span></p>
+<div style="position: fixed; font-size: x-small; font-weight: lighter; bottom: 0; right: 0;">
+<p>https://www.gida-global.org/care</p>
+</div>
+</section>
+<section id="publishing-data-2" class="slide level2">
+<h2>Publishing data</h2>
+<blockquote>
+<p>As open as possible; as closed as necessary.</p>
+</blockquote>
+<p>Are the data suitable for sharing?</p>
+<ul>
+<li class="fragment">Personal data</li>
+<li class="fragment">Commercially confidential data</li>
+<li class="fragment">Data belonging to third parties</li>
+<li class="fragment">Other types of confidential data</li>
+<li class="fragment">Data too large to be published online in a repository</li>
+</ul>
+</section>
+<section id="publishing-data-3" class="slide level2">
+<h2>Publishing data</h2>
+<h3 id="licenses">Licenses</h3>
+
+<img data-src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Creative_Commons_Licenses.png" class="r-stretch"><div style="position: fixed; font-size: x-small; font-weight: lighter; bottom: 0; right: 0;">
+<p>JoKalliauer; foter, CC BY-SA 3.0 <a href="https://creativecommons.org/licenses/by-sa/3.0" class="uri">https://creativecommons.org/licenses/by-sa/3.0</a>, via Wikimedia Commons</p>
+</div>
+</section>
+<section id="data-ownership" class="slide level2 center">
+<h2>Data ownership</h2>
+<p>As a general rule, TU Delft owns all research data generated by employees at TU Delft.</p>
+<p>But funder of the project (either public or commercial) might impose ownership conditions.</p>
+<p>Check whether existing relevant documents, such as grant/consortium agreement etc., specify:</p>
+<ul>
+<li class="fragment">Who is allowed to use the data?</li>
+<li class="fragment">Can the data be made publicly available?</li>
+<li class="fragment">What is the publication procedure?</li>
+<li class="fragment">The <a href="https://intranet.tudelft.nl/-/faculty-contract-management">faculty contract managers</a> can advise on these agreements</li>
+</ul>
+</section>
+<section id="publishing-software" class="slide level2" data-background-image="img/software-license-compatibility.png" data-background-position="95% 50%" data-background-size="40%">
+<h2>Publishing software</h2>
+<h3 id="tu-delft-policy-on-research-software">TU Delft policy on research software</h3>
+<ul>
+<li class="fragment">Can it be made open source?
+<ul>
+<li class="fragment">If yes, TU Delft transfers copyright to you</li>
+<li class="fragment">If no, contact your data steward</li>
+</ul></li>
+<li class="fragment">Apply pre-approved open source license</li>
+<li class="fragment">Publish the software (e.g.&nbsp;GitHub/Lab + 4TU for DOI)</li>
+<li class="fragment">Register software with <a href="https://pure.tudelft.nl/admin">PURE</a>
+<ul>
+<li class="fragment">If published in 4TU.ResearchData, this is done automatically</li>
+</ul></li>
+</ul>
+<div style="position: fixed; font-size: x-small; font-weight: lighter; bottom: 0; right: 0;">
+<p>Bazuine, Merlijn. (2021). TU Delft Guidelines on Research Software: Licensing, Registration and Commercialisation. Zenodo. <a href="https://doi.org/10.5281/zenodo.4629635" class="uri">https://doi.org/10.5281/zenodo.4629635</a></p>
+</div>
+</section>
+<section id="publishing-software-1" class="slide level2">
+<h2>Publishing software</h2>
+<h3 id="commercial-vs.-open-source">Commercial vs.&nbsp;open source</h3>
+<p>Can co-exist (e.g.&nbsp;RStudio, NextCloud, ownCloud, Linux distros)</p>
+<ul>
+<li class="fragment">Software is open source, maintenance and support is profitable</li>
+<li class="fragment">Free for individuals, commercial licenses</li>
+<li class="fragment">Free basic model, proprietary advanced usage</li>
+</ul>
+</section></section>
+<section id="whats-next" class="title-slide slide level1 center">
+<h1>What’s Next?</h1>
+<div class="columns">
+<div class="column">
+<p><span style="opacity: 0.3;"><strong>Part 1</strong></span></p>
+<ul>
+<li class="fragment"><span style="opacity: 0.3;">Intro to research data management</span>
+<ul>
+<li class="fragment"><span style="opacity: 0.3;">policy requirements</span></li>
+<li class="fragment"><span style="opacity: 0.3;">processing personal data</span></li>
+</ul></li>
+<li class="fragment"><span style="opacity: 0.3;">Hands-on experience with DMP(online)</span></li>
+</ul>
+<p><strong>Part 2</strong></p>
+<ul>
+<li class="fragment">Applying what you learned</li>
+<li class="fragment">Discussing with supervisor (and data steward) and completing the DMP</li>
+</ul>
+</div><div class="column">
+<p><strong>Part 3</strong></p>
+<ul>
+<li class="fragment">Summary of part 1</li>
+<li class="fragment">Re-evaluation of DMPs</li>
+<li class="fragment">Archiving and publishing data and code</li>
+</ul>
+</div>
+</div>
+
+<img src="img/TUDelft_logo_rgb.png" class="slide-logo r-stretch"><div class="footer footer-default">
+
+</div>
+</section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="part-1_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="part-1_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="part-1_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="part-1_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="part-1_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="part-1_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="part-1_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="part-1_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="part-1_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="part-1_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'smaller': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        target: function(trigger) {
+          return trigger.previousElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn) {
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'quarto-reveal',
+          placement: 'bottom-start'
+        };
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

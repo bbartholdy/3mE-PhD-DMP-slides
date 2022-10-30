@@ -1,0 +1,84 @@
+/*delft blue: 
+    CMYK: (100%, 0%, 0%, 0%)
+    RGB: (0, 166, 214)
+    Hex: #00A6D6
+white
+    CMYK: (0%, 0%, 0%, 0%)
+    RGB: (255, 255, 255)
+    Hex: #FFFFFF 
+black
+    CMYK: (0%, 0%, 0%, 100%)
+    RGB: (0, 0, 0)
+    Hex: #000000  
+
+additional colours: https://www.tudelft.nl/en/tu-delft-corporate-design/components/colour
+*/
+
+/*-- scss:defaults --*/
+
+/**
+ * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+
+// Include theme-specific fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+//@import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
+//@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+
+
+// Override theme settings (see ../template/settings.scss)
+$mainFont: 'Arial', sans-serif;
+$mainFontSize: 24px;
+$mainColor: #000000;
+$headingFont: 'Arial', sans-serif;
+$headingColor: #00A6D6;
+$headingTextShadow: none;
+$headingTextTransform: none;
+$backgroundColor: #fff;
+$boldColor: #0C2340;
+$linkColor: #A50034;
+$linkColorHover: lighten( $linkColor, 20% );
+$selectionBackgroundColor: rgba(0, 0, 0, 0.99);
+
+
+// Change text colors against dark slide backgrounds
+//@include dark-bg-text-color(#fff);
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+/*-- scss:rules --*/
+
+.inverse {
+  background-color: #00A6D6;
+  color: #d6d6d6;
+  text-shadow: 0 0 20px #333;
+}
+
+.background-caption {
+  position: fixed;
+  font-size: x-small;
+  font-weight: lighter;
+}
+
+.slide-logo {
+  right: 12px;
+  bottom: 0px;
+  //bottom: -10px !important;
+  height: 120%;
+  max-height: 3.5em !important;
+}
+
+.remark .slide-menu-button {
+  color: #00A6D6;
+}
