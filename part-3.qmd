@@ -1,0 +1,216 @@
+---
+title: Data Management Plan Training
+subtitle: 3me PhD students - Part 3
+author: Me
+format: 
+    revealjs:
+        navigation-mode: vertical
+        incremental: true
+        center: true
+        footer: "link to slides"
+        logo: img/TUDelft_logo_rgb.png
+        title-slide-attributes:
+          data-background-color: "#00A6D6"
+          data-background-image: "img/TUDelft_logo_white.png"
+          data-background-position: "0% 110%"
+          data-background-size: "30%"
+        #css: delft-theme.css
+        theme: [default, delft-theme.scss]
+        #preview-links: true
+---
+
+# Overview
+
+## Why?
+
+Hopefully this is becoming clearer...
+
+. . .
+
+If it's not clear after part 3, shame on me
+
+## Plan
+
+- Reminder of important bits
+- Presentation on workflow and DMP reflection
+- Q & A
+- Archiving/publishing data and code
+
+# During the project <br> (the important bits) {background-image="img/rdm-storage.jpg" background-size="60%" background-position="right" aria-label="Person looking in a closet with various books, folders, locked boxes. Speachbox saying data from last year?"}
+
+::: {.background-caption style="right: 100px; bottom: 0px;"}
+This illustration is created by Scriberia with The Turing Way community.  
+Used under a CC-BY 4.0 licence. DOI: [10.5281/zenodo.3332807](https://doi.org/10.5281/zenodo.3332807)
+:::
+
+## Data storage
+
+Secure and backed-up (e.g. Project Data U:)
+
+Or cloud solutions
+
+- SURFDrive: 500GB
+- OneDrive: 1TB
+
+## Data backup
+
+3 copies of data (including active work)
+
+. . .
+
+2 media
+
+. . .
+
+1 off-site
+
+## Data organisation
+
+Think about it. [Can someone else take over without your help?]{.fragment}
+
+File naming should be consistent and understandable (to humans and machines)
+
+- include the date created (where applicable)
+- no special characters or spaces (excl. `-`, `_`)
+
+Use version control.
+
+## Documentation
+
+Best if done during the project!
+
+Paper/electronic lab notebooks
+
+Code notebooks (e.g. R Notebook and Jupyter Notebook)
+
+## Personal and/or confidential data
+
+HREC application:
+
+- [HREC checklist](https://www.tudelft.nl/over-tu-delft/strategie/integriteitsbeleid/human-research-ethics/hrec-approval-1-application)
+- Informed consent materials
+- **Data Management Plan**
+
+# After the Project {background-color="#00A6D6" background-image="img/archive-or-publish.jpg" background-position="right" background-size="60%"}
+
+::: {style="position: fixed; font-size: x-small; font-weight: lighter; bottom: 0; right: 0;"}
+This illustration is created by Scriberia with The Turing Way community.  
+Used under a CC-BY 4.0 licence. DOI: [10.5281/zenodo.3332807](https://doi.org/10.5281/zenodo.3332807)
+:::
+
+## Archiving data/code
+
+As a PhD student you are resposible for:
+
+>Ensuring that all data and code underlying completed PhD theses are
+appropriately documented and accessible for at least 10 years from the end
+of the research project, in accordance with the FAIR principles (Findable,
+Accessible, Interoperable and Reusable), unless there are valid reasons
+which make research data unsuitable for sharing.
+
+\- [3mE RDM Policy](https://d2k0ddhflgrk1i.cloudfront.net/Library/Themaportalen/RDM/Beleid/2020_3mE_Research_Data_Management_Policy.pdf)
+
+## Publishing data/code 
+
+
+> Data are available upon request to corresponding author.
+
+. . .
+
+![GIPHY](https://media.giphy.com/media/5fBH6zf7l8bxukYh74Q/giphy.gif)
+
+. . .
+
+> As open as possible; as closed as necessary.
+
+## Publishing data
+
+### Be FAIR
+
+![](img/FAIRdataprinciples_foster.png){height="250"}
+
+**F**indable - persistent identifier (e.g. DOI) and detailed metadata  
+**A**ccessible - long-term accessibility of data (or just metadata if restricted)  
+**I**nteroperable - non-proprietary file formats  
+**R**eusable - proper documentation and clear license
+
+::: {style="position: fixed; font-size: x-small; font-weight: lighter; bottom: 0; right: 0;"}
+Image: https://book.fosteropenscience.eu/
+:::
+
+## Publishing data
+
+### and CARE
+
+![](img/care-principles.png)
+
+**C**ollective benefit - inclusive development and equitable outcomes  
+**A**uthority to control - Rights, interests, and governance  
+**R**esponsibility - respect, reciprocity, and trust
+**E**thics - minimising harm and maximising benefit
+
+::: {style="position: fixed; font-size: x-small; font-weight: lighter; bottom: 0; right: 0;"}
+https://www.gida-global.org/care
+:::
+
+## Publishing data
+
+### Licenses
+
+![](https://upload.wikimedia.org/wikipedia/commons/e/e6/Creative_Commons_Licenses.png)
+
+::: {style="position: fixed; font-size: x-small; font-weight: lighter; bottom: 0; right: 0;"}
+JoKalliauer; foter, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons
+:::
+
+
+## Publishing software {background-image="img/software-license-compatibility.png" background-position="right" background-size="60%"}
+
+TU Delft policy on research software
+
+- Can it be made open source?
+  + If yes, TU Delft transfers copyright to you
+  + If no, contact your data steward
+- Apply pre-approved open source license
+- Publish the software (e.g. GitHub/Lab + 4TU for DOI)
+- Register software with [PURE](https://pure.tudelft.nl/admin)
+  + If published in 4TU.ResearchData, this is done automatically
+
+::: {style="position: fixed; font-size: x-small; font-weight: lighter; bottom: 0; right: 0;"}
+Bazuine, Merlijn. (2021). TU Delft Guidelines on Research Software: Licensing, Registration and Commercialisation. Zenodo. <https://doi.org/10.5281/zenodo.4629635>
+:::
+
+## Publishing software
+
+### Commercial vs. open source
+
+Can co-exist (e.g. RStudio, NextCloud, ownCloud, Linux distros)
+
+- Software is open source, maintenance and support is profitable
+- Free for individuals, commercial licenses
+- Free basic model, proprietary advanced usage
+
+
+## Be FAIR 2 {auto-animate="true"}
+
+![](img/fair-data-f.png){.absolute height="450" left=10 top=0}
+
+![](img/fair-data-a.png){.absolute top=0 right=10}
+
+![](img/fair-data-i.png){.absolute bottom=0 right=10}
+
+![](img/fair-data-r.png){.absolute bottom=0 right=0}
+
+## Reproducibility
+
+Going the extra mile
+
+![](img/reproducible-research-spectrum.png){style="border: 0.2em solid black;"}
+
+
+::: {style="position: fixed; font-size: x-small; font-weight: lighter; bottom: 0; right: 0;"}
+By Marwick et al. 2017 (<https://doi.org/10.31235/osf.io/72n8g>)
+:::
+
+
+
