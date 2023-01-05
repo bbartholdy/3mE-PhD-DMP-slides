@@ -1,0 +1,59 @@
+/*--  scss:defaults --*/
+
+
+/*delft blue: 
+    CMYK: (100%, 0%, 0%, 0%)
+    RGB: (0, 166, 214)
+    Hex: #00A6D6
+white
+    CMYK: (0%, 0%, 0%, 0%)
+    RGB: (255, 255, 255)
+    Hex: #FFFFFF 
+black
+    CMYK: (0%, 0%, 0%, 100%)
+    RGB: (0, 0, 0)
+    Hex: #000000  
+
+additional colours: https://www.tudelft.nl/en/tu-delft-corporate-design/components/colour
+*/
+
+// Include theme-specific fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&display=swap');
+
+@font-face { // not working - need a way to rely on local font
+    font-family: "TestFont";
+    src: url('TUDelft-Fonts-Arial-Roboto-Slab/RobotoSlab/RobotoSlab-SemiBold.ttf') format('truetype');
+}
+
+// Override theme settings
+// fonts
+$mainFont: 'Arial', sans-serif;
+$mainFontSize: 1.8em;
+$font-family-sans-serif: 'Arial';
+$headingFont: 'Roboto Slab', sans-serif;
+$headingTextShadow: none;
+$headingTextTransform: none;
+
+// colours
+$backgroundColor: #fff;
+$mainColor: #000000;
+$headingColor: #00A6D6;
+$link-color: #A50034;
+$code-color: #009B77;
+$light-bg-code-color: #EC6842;
+$dark-bg-code-color: #009B77;
+//$linkColorHover: lighten( $linkColor, 20% );
+$link-color-hover: lighten( $link-color, 20% );
+$selectionBackgroundColor: rgba(0, 0, 0, 0.99);
+
+// CSS
+
+div.sourceCode {
+    border: 1px solid #00B8C8 !important;
+}
+
+.background-caption {
+    position: fixed;
+    font-size: x-small;
+    font-weight: lighter;
+  }
