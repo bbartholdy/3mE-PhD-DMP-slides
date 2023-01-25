@@ -7,7 +7,7 @@ format:
         navigation-mode: vertical
         incremental: true
         scrollable: true
-        #footer: "link to slides"
+        footer: <https://doi.org/10.5281/zenodo.7298998>
         logo: img/TUDelft_logo_rgb.png
         title-slide-attributes:
           data-background-color: "#00A6D6"
@@ -15,7 +15,7 @@ format:
           data-background-position: "0% 110%"
           data-background-size: "30%"
         #css: delft-theme.css
-        theme: [delft-theme.scss]
+        theme: tud-theme.scss
         #preview-links: true
 ---
 
