@@ -6,7 +6,7 @@ format:
     revealjs:
         navigation-mode: vertical
         incremental: true
-        center: true
+        #center: true
         footer: "link to slides"
         logo: img/TUDelft_logo_rgb.png
         title-slide-attributes:
@@ -15,7 +15,7 @@ format:
           data-background-position: "0% 110%"
           data-background-size: "30%"
         #css: delft-theme.css
-        theme: [default, delft-theme.scss]
+        theme: tud-theme.scss
         #preview-links: true
 ---
 
@@ -29,28 +29,75 @@ Hopefully this is becoming clearer...
 
 If it's not clear after part 3, shame on me
 
+## Training Schedule
+
+:::: {.nonincremental}
+:::: {.columns}
+
+::: {.column}
+[**Part 1**]{style="opacity: 0.3;"}
+
+- [Intro to research data management]{style="opacity: 0.3;"}
+    + [policy requirements]{style="opacity: 0.3;"}
+    + [processing personal data]{style="opacity: 0.3;"}
+- [Hands-on experience with DMP(online)]{style="opacity: 0.3;"}
+
+
+[**Part 2**]{style="opacity: 0.3;"}
+
+- [Applying what you learned]{style="opacity: 0.3;"}
+- [Discussing with supervisor (and data steward) and completing the DMP]{style="opacity: 0.3;"}
+
+:::
+
+::: {.column}
+
+**Part 3**
+
+- Summary of part 1
+- Archiving and publishing data and code
+- Re-evaluation of DMPs
+
+:::
+::::
+::::
+
 ## Plan
 
+**Lecture**
+
 - Reminder of important bits
-- Presentation on workflow and DMP reflection
-- Q & A
 - Archiving/publishing data and code
 
-# During the project <br> (the important bits) {background-image="img/rdm-storage.jpg" background-size="60%" background-position="right" aria-label="Person looking in a closet with various books, folders, locked boxes. Speachbox saying data from last year?"}
+**Interactive session**
 
-::: {.background-caption style="right: 100px; bottom: 0px;"}
+- Presentation on workflow and DMP reflection
+- Q & A
+
+
+# During the project <br> (the important bits) {background-color="#00A6D6" background-image="img/rdm-storage.jpg" background-size="55%" background-position="right" aria-label="Person looking in a closet with various books, folders, locked boxes. Speachbox saying data from last year?"}
+
+::: {.background-caption style="right: 100px; bottom: 0px; color: black;"}
 This illustration is created by Scriberia with The Turing Way community.  
 Used under a CC-BY 4.0 licence. DOI: [10.5281/zenodo.3332807](https://doi.org/10.5281/zenodo.3332807)
 :::
 
 ## Data storage
 
-Secure and backed-up (e.g. Project Data U:)
+Secure and backed-up (e.g. [Project Data U:](https://tudelft.topdesk.net/tas/public/ssp/content/detail/service?unid=846ebb16181c43b5836c063a917dd199))
 
 Or cloud solutions
 
 - SURFDrive: 500GB
 - OneDrive: 1TB
+
+. . .
+
+Cloud solutions are deleted after your contract ends
+
+. . .
+
+Send encrypted files via [SURFfilesender](https://filesender.surf.nl/)
 
 ## Data backup
 
@@ -68,10 +115,14 @@ Or cloud solutions
 
 Think about it. [Can someone else take over without your help?]{.fragment}
 
+. . .
+
 File naming should be consistent and understandable (to humans and machines)
 
 - include the date created (where applicable)
 - no special characters or spaces (excl. `-`, `_`)
+
+. . .
 
 Use version control.
 
@@ -79,19 +130,28 @@ Use version control.
 
 Best if done during the project!
 
+README file(s)
+
 Paper/electronic lab notebooks
 
-Code notebooks (e.g. R Notebook and Jupyter Notebook)
+Annotated scripts or Code notebooks (e.g. R Notebook and Jupyter Notebook)
 
-## Personal and/or confidential data
+## Personal and confidential data
 
-HREC application:
+Working with human participants requires an HREC application:
 
 - [HREC checklist](https://www.tudelft.nl/over-tu-delft/strategie/integriteitsbeleid/human-research-ethics/hrec-approval-1-application)
 - Informed consent materials
 - **Data Management Plan**
 
-# After the Project {background-color="#00A6D6" background-image="img/archive-or-publish.jpg" background-position="right" background-size="60%"}
+. . .
+
+Resources
+
+- [Data privacy](https://www.tudelft.nl/en/privacy-security/privacy)
+- [Data security](https://www.tudelft.nl/en/privacy-security/data-security/)
+
+# After the Project {background-color="#00A6D6" background-image="img/archive-or-publish.jpg" background-position="right" background-size="55%"}
 
 ::: {style="position: fixed; font-size: x-small; font-weight: lighter; bottom: 0; right: 0;"}
 This illustration is created by Scriberia with The Turing Way community.  
@@ -110,7 +170,15 @@ which make research data unsuitable for sharing.
 
 \- [3mE RDM Policy](https://d2k0ddhflgrk1i.cloudfront.net/Library/Themaportalen/RDM/Beleid/2020_3mE_Research_Data_Management_Policy.pdf)
 
-## Publishing data/code 
+Minimal requirement:
+
+- deposition of processed data underlying figures and conclusions in published papers and dissertations.
+
+Encouraged:
+
+- deposition of raw data, software, data analysis scripts, protocols, etc.
+
+## Publishing data
 
 
 > Data are available upon request to corresponding author.
@@ -119,9 +187,63 @@ which make research data unsuitable for sharing.
 
 ![GIPHY](https://media.giphy.com/media/5fBH6zf7l8bxukYh74Q/giphy.gif)
 
+## Publishing data
+
+Considerations
+
 . . .
 
 > As open as possible; as closed as necessary.
+
+
+- what to share
+  - validate and reproduce results
+  - confidentiality, intellectual property, ethics and privacy, patent
+  - journal requirements for data availability
+- how to share
+  - certified repositories
+  - license
+
+## Publishing data
+
+Not suitable for sharing:
+
+- identifiable personal data (name, email, BSN, biometrics, etc.)
+- confidential commercial data
+- third party data (not necessary to re-share if published)
+- other confidential data (nuclear research, military research)
+- large datasets (think terabytes)
+
+. . .
+
+If in doubt, contact supervisor, owner of data, faculty contract manager, privacy officer, data steward
+
+## Publishing data {.nested}
+
+### Personal data
+
+Data relating to identifiable person
+
+- Can publish:
+  - anonymised or aggregated data
+- Can archive (restricted access):
+  - pseudonymised data
+
+. . .
+
+Consent from participants needed for publishing and archiving
+
+. . .
+
+Can make empty informed consent form available
+
+### Data involved in patent
+
+- Can publish:
+  - all data under temporary embargo (until IP is protected)
+  - be careful with metadata
+
+<!-- end: testing rotated h2 title -->
 
 ## Publishing data
 
@@ -163,10 +285,55 @@ https://www.gida-global.org/care
 JoKalliauer; foter, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons
 :::
 
+## Publishing data
 
-## Publishing software {background-image="img/software-license-compatibility.png" background-position="right" background-size="60%"}
+:::: {.columns}
+::: {.column}
+#### Recommended repositories
 
-TU Delft policy on research software
+- Zenodo
+- 4TU.ResearchData
+- DANS
+- IDR
+- NOMAD
+
+. . .
+
+[Registry of Research data Repositories](https://www.re3data.org)
+:::
+
+::: {.column}
+#### NOT legitimate repositories
+
+- GitHub (can be connected to 4TU and Zenodo)
+- ResearchGate/Academia-not-edu
+- Personal website
+
+. . .
+
+(You can of course use these in addition to a certified repository)
+:::
+::::
+
+## Publishing data
+
+### 4TU.ResearchData
+
+- 4TU.ResearchData consortium (includes TUDelft)
+- free storage up to 1TB/year (for TUDelft researchers)
+- international repository
+- publish/archive code (15+ years)
+  - open access
+  - embargo
+  - restricted access
+- DOI + citation statement
+- track usage (downloads, views, citation)
+- figshare in a TUDelft wrapper
+
+
+## Publishing software
+
+TU Delft [policy](https://zenodo.org/record/4629662#.Y4d-hH3MJhE) on research software
 
 - Can it be made open source?
   + If yes, TU Delft transfers copyright to you
@@ -176,6 +343,12 @@ TU Delft policy on research software
 - Register software with [PURE](https://pure.tudelft.nl/admin)
   + If published in 4TU.ResearchData, this is done automatically
 
+## Publishing software
+
+License compatibility
+
+![](img/software-license-compatibility.png)
+
 ::: {style="position: fixed; font-size: x-small; font-weight: lighter; bottom: 0; right: 0;"}
 Bazuine, Merlijn. (2021). TU Delft Guidelines on Research Software: Licensing, Registration and Commercialisation. Zenodo. <https://doi.org/10.5281/zenodo.4629635>
 :::
@@ -184,26 +357,51 @@ Bazuine, Merlijn. (2021). TU Delft Guidelines on Research Software: Licensing, R
 
 ### Commercial vs. open source
 
-Can co-exist (e.g. RStudio, NextCloud, ownCloud, Linux distros)
+Can co-exist (e.g. RStudio, NextCloud, ownCloud, Linux distros, WordPress)
 
-- Software is open source, maintenance and support is profitable
+- Software is free and open source, maintenance and support is paid
 - Free for individuals, commercial licenses
 - Free basic model, proprietary advanced usage
 
 
-## Be FAIR 2 {auto-animate="true"}
+## Publishing protocols
 
-![](img/fair-data-f.png){.absolute height="450" left=10 top=0}
+protocols.io
 
-![](img/fair-data-a.png){.absolute top=0 right=10}
+- publish detailed protocols
+  - experiments
+  - computations
+- assign DOI for publication
+- update with new version
 
-![](img/fair-data-i.png){.absolute bottom=0 right=10}
+## Reproducibility {background-image="img/ReproducibleJourney.jpg" background-position="right" background-size="40%"}
 
-![](img/fair-data-r.png){.absolute bottom=0 right=0}
+:::: {.columns}
+::: {.column width="80%"}
+**Reproducible:** Reproducing results using the same methods and data
+
+**Replicable:** Reproducing results using the same methods but DIFFERENT data
+
+[Main causes of failure to reproduce research:]{.fragment}
+
+- Selective reporting
+- Methods, code unavailable
+- data unavailable
+
+[<https://doi.org/10.1038/533452a>]{.fragment}
+
+[Another barrier to reproducibility is the use of proprietary software and file formats (Not all institutions have a MatLab license - very few individuals)]{.fragment}
+:::
+::::
+
+::: {style="position: fixed; font-size: x-small; font-weight: lighter; bottom: 0; right: 0;"}
+This illustration is created by Scriberia with The Turing Way community.  
+Used under a CC-BY 4.0 licence. DOI: [10.5281/zenodo.3332807](https://doi.org/10.5281/zenodo.3332807)
+:::
 
 ## Reproducibility
 
-Going the extra mile
+Going the extra mile for science! 🥼
 
 ![](img/reproducible-research-spectrum.png){style="border: 0.2em solid black;"}
 
@@ -212,5 +410,22 @@ Going the extra mile
 By Marwick et al. 2017 (<https://doi.org/10.31235/osf.io/72n8g>)
 :::
 
+## Steps towards Open Science {.scrollable}
 
+NOT everything everywhere all at once - start small
 
+- transparency
+  - thorough documentation (data collection, methodology, analysis steps)
+  - analysis outputs (from SPSS, MatLab, etc.)
+  - raw data
+- research compendium
+  - documentation (README)
+  - code
+  - data (raw and processed)
+- executable article
+  - documentation (README)
+  - code
+  - data
+  - computational environement (Docker, Binder, etc.)
+
+[Removing Barriers to Reproducible Research in Archaeology](https://doi.org/10.5281/zenodo.6615276)

@@ -7,7 +7,7 @@
 <link href="part-3_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="part-3_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="part-3_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.0.37">
+  <meta name="generator" content="quarto-1.2.242">
 
   <meta name="author" content="Me">
   <title>Data Management Plan Training</title>
@@ -19,10 +19,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
   </style>
   <link rel="stylesheet" href="part-3_files/libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="part-3_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -318,51 +323,98 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-color="#00A6D6" data-background-image="img/TUDelft_logo_white.png" data-background-position="0% 110%" data-background-size="30%" class="center">
+<section id="title-slide" data-background-color="#00A6D6" data-background-image="img/TUDelft_logo_white.png" data-background-position="0% 110%" data-background-size="30%" class="quarto-title-block center">
   <h1 class="title">Data Management Plan Training</h1>
   <p class="subtitle">3me PhD students - Part 3</p>
-  <p class="author">Me</p>
-</section>
 
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Me 
+</div>
+</div>
+</div>
+
+</section>
 <section>
 <section id="overview" class="title-slide slide level1 center">
 <h1>Overview</h1>
 
 </section>
-<section id="why" class="slide level2 center">
+<section id="why" class="slide level2">
 <h2>Why?</h2>
 <p>Hopefully this is becoming clearer…</p>
 <div class="fragment">
 <p>If it’s not clear after part 3, shame on me</p>
 </div>
 </section>
-<section id="plan" class="slide level2 center">
+<section id="training-schedule" class="slide level2">
+<h2>Training Schedule</h2>
+<div>
+<div class="columns">
+<div class="column">
+<p><span style="opacity: 0.3;"><strong>Part 1</strong></span></p>
+<ul>
+<li><span style="opacity: 0.3;">Intro to research data management</span>
+<ul>
+<li><span style="opacity: 0.3;">policy requirements</span></li>
+<li><span style="opacity: 0.3;">processing personal data</span></li>
+</ul></li>
+<li><span style="opacity: 0.3;">Hands-on experience with DMP(online)</span></li>
+</ul>
+<p><span style="opacity: 0.3;"><strong>Part 2</strong></span></p>
+<ul>
+<li><span style="opacity: 0.3;">Applying what you learned</span></li>
+<li><span style="opacity: 0.3;">Discussing with supervisor (and data steward) and completing the DMP</span></li>
+</ul>
+</div><div class="column">
+<p><strong>Part 3</strong></p>
+<ul>
+<li>Summary of part 1</li>
+<li>Archiving and publishing data and code</li>
+<li>Re-evaluation of DMPs</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="plan" class="slide level2">
 <h2>Plan</h2>
+<p><strong>Lecture</strong></p>
 <ul>
 <li class="fragment">Reminder of important bits</li>
+<li class="fragment">Archiving/publishing data and code</li>
+</ul>
+<p><strong>Interactive session</strong></p>
+<ul>
 <li class="fragment">Presentation on workflow and DMP reflection</li>
 <li class="fragment">Q &amp; A</li>
-<li class="fragment">Archiving/publishing data and code</li>
 </ul>
 </section></section>
 <section>
-<section id="during-the-project-the-important-bits" class="title-slide slide level1 center" data-background-image="img/rdm-storage.jpg" data-background-size="60%" data-background-position="right" aria-label="Person looking in a closet with various books, folders, locked boxes. Speachbox saying data from last year?">
+<section id="during-the-project-the-important-bits" class="title-slide slide level1 center" data-background-color="#00A6D6" data-background-image="img/rdm-storage.jpg" data-background-size="55%" data-background-position="right" aria-label="Person looking in a closet with various books, folders, locked boxes. Speachbox saying data from last year?">
 <h1>During the project <br> (the important bits)</h1>
-<div class="background-caption" style="right: 100px; bottom: 0px;">
+<div class="background-caption" style="right: 100px; bottom: 0px; color: black;">
 <p>This illustration is created by Scriberia with The Turing Way community.<br>
 Used under a CC-BY 4.0 licence. DOI: <a href="https://doi.org/10.5281/zenodo.3332807">10.5281/zenodo.3332807</a></p>
 </div>
 </section>
-<section id="data-storage" class="slide level2 center">
+<section id="data-storage" class="slide level2">
 <h2>Data storage</h2>
-<p>Secure and backed-up (e.g.&nbsp;Project Data U:)</p>
+<p>Secure and backed-up (e.g.&nbsp;<a href="https://tudelft.topdesk.net/tas/public/ssp/content/detail/service?unid=846ebb16181c43b5836c063a917dd199">Project Data U:</a>)</p>
 <p>Or cloud solutions</p>
 <ul>
 <li class="fragment">SURFDrive: 500GB</li>
 <li class="fragment">OneDrive: 1TB</li>
 </ul>
+<div class="fragment">
+<p>Cloud solutions are deleted after your contract ends</p>
+</div>
+<div class="fragment">
+<p>Send encrypted files via <a href="https://filesender.surf.nl/">SURFfilesender</a></p>
+</div>
 </section>
-<section id="data-backup" class="slide level2 center">
+<section id="data-backup" class="slide level2">
 <h2>Data backup</h2>
 <p>3 copies of data (including active work)</p>
 <div class="fragment">
@@ -372,49 +424,69 @@ Used under a CC-BY 4.0 licence. DOI: <a href="https://doi.org/10.5281/zenodo.333
 <p>1 off-site</p>
 </div>
 </section>
-<section id="data-organisation" class="slide level2 center">
+<section id="data-organisation" class="slide level2">
 <h2>Data organisation</h2>
 <p>Think about it. <span class="fragment">Can someone else take over without your help?</span></p>
+<div class="fragment">
 <p>File naming should be consistent and understandable (to humans and machines)</p>
 <ul>
 <li class="fragment">include the date created (where applicable)</li>
 <li class="fragment">no special characters or spaces (excl. <code>-</code>, <code>_</code>)</li>
 </ul>
+</div>
+<div class="fragment">
 <p>Use version control.</p>
+</div>
 </section>
-<section id="documentation" class="slide level2 center">
+<section id="documentation" class="slide level2">
 <h2>Documentation</h2>
 <p>Best if done during the project!</p>
+<p>README file(s)</p>
 <p>Paper/electronic lab notebooks</p>
-<p>Code notebooks (e.g.&nbsp;R Notebook and Jupyter Notebook)</p>
+<p>Annotated scripts or Code notebooks (e.g.&nbsp;R Notebook and Jupyter Notebook)</p>
 </section>
-<section id="personal-andor-confidential-data" class="slide level2 center">
-<h2>Personal and/or confidential data</h2>
-<p>HREC application:</p>
+<section id="personal-and-confidential-data" class="slide level2">
+<h2>Personal and confidential data</h2>
+<p>Working with human participants requires an HREC application:</p>
 <ul>
 <li class="fragment"><a href="https://www.tudelft.nl/over-tu-delft/strategie/integriteitsbeleid/human-research-ethics/hrec-approval-1-application">HREC checklist</a></li>
 <li class="fragment">Informed consent materials</li>
 <li class="fragment"><strong>Data Management Plan</strong></li>
 </ul>
+<div class="fragment">
+<p>Resources</p>
+<ul>
+<li class="fragment"><a href="https://www.tudelft.nl/en/privacy-security/privacy">Data privacy</a></li>
+<li class="fragment"><a href="https://www.tudelft.nl/en/privacy-security/data-security/">Data security</a></li>
+</ul>
+</div>
 </section></section>
 <section>
-<section id="after-the-project" class="title-slide slide level1 center" data-background-color="#00A6D6" data-background-image="img/archive-or-publish.jpg" data-background-position="right" data-background-size="60%">
+<section id="after-the-project" class="title-slide slide level1 center" data-background-color="#00A6D6" data-background-image="img/archive-or-publish.jpg" data-background-position="right" data-background-size="55%">
 <h1>After the Project</h1>
 <div style="position: fixed; font-size: x-small; font-weight: lighter; bottom: 0; right: 0;">
 <p>This illustration is created by Scriberia with The Turing Way community.<br>
 Used under a CC-BY 4.0 licence. DOI: <a href="https://doi.org/10.5281/zenodo.3332807">10.5281/zenodo.3332807</a></p>
 </div>
 </section>
-<section id="archiving-datacode" class="slide level2 center">
+<section id="archiving-datacode" class="slide level2">
 <h2>Archiving data/code</h2>
 <p>As a PhD student you are resposible for:</p>
 <blockquote>
 <p>Ensuring that all data and code underlying completed PhD theses are appropriately documented and accessible for at least 10 years from the end of the research project, in accordance with the FAIR principles (Findable, Accessible, Interoperable and Reusable), unless there are valid reasons which make research data unsuitable for sharing.</p>
 </blockquote>
 <p>- <a href="https://d2k0ddhflgrk1i.cloudfront.net/Library/Themaportalen/RDM/Beleid/2020_3mE_Research_Data_Management_Policy.pdf">3mE RDM Policy</a></p>
+<p>Minimal requirement:</p>
+<ul>
+<li class="fragment">deposition of processed data underlying figures and conclusions in published papers and dissertations.</li>
+</ul>
+<p>Encouraged:</p>
+<ul>
+<li class="fragment">deposition of raw data, software, data analysis scripts, protocols, etc.</li>
+</ul>
 </section>
-<section id="publishing-datacode" class="slide level2 center">
-<h2>Publishing data/code</h2>
+<section id="publishing-data" class="slide level2">
+<h2>Publishing data</h2>
 <blockquote>
 <p>Data are available upon request to corresponding author.</p>
 </blockquote>
@@ -426,13 +498,74 @@ Used under a CC-BY 4.0 licence. DOI: <a href="https://doi.org/10.5281/zenodo.333
 </figure>
 </div>
 </div>
+</section>
+<section id="publishing-data-1" class="slide level2">
+<h2>Publishing data</h2>
+<p>Considerations</p>
 <div class="fragment">
 <blockquote>
 <p>As open as possible; as closed as necessary.</p>
 </blockquote>
+<ul>
+<li class="fragment">what to share
+<ul>
+<li class="fragment">validate and reproduce results</li>
+<li class="fragment">confidentiality, intellectual property, ethics and privacy, patent</li>
+<li class="fragment">journal requirements for data availability</li>
+</ul></li>
+<li class="fragment">how to share
+<ul>
+<li class="fragment">certified repositories</li>
+<li class="fragment">license</li>
+</ul></li>
+</ul>
 </div>
 </section>
-<section id="publishing-data" class="slide level2 center">
+<section id="publishing-data-2" class="slide level2">
+<h2>Publishing data</h2>
+<p>Not suitable for sharing:</p>
+<ul>
+<li class="fragment">identifiable personal data (name, email, BSN, biometrics, etc.)</li>
+<li class="fragment">confidential commercial data</li>
+<li class="fragment">third party data (not necessary to re-share if published)</li>
+<li class="fragment">other confidential data (nuclear research, military research)</li>
+<li class="fragment">large datasets (think terabytes)</li>
+</ul>
+<div class="fragment">
+<p>If in doubt, contact supervisor, owner of data, faculty contract manager, privacy officer, data steward</p>
+</div>
+</section>
+<section id="publishing-data-3" class="slide level2 nested">
+<h2>Publishing data</h2>
+<h3 id="personal-data">Personal data</h3>
+<p>Data relating to identifiable person</p>
+<ul>
+<li class="fragment">Can publish:
+<ul>
+<li class="fragment">anonymised or aggregated data</li>
+</ul></li>
+<li class="fragment">Can archive (restricted access):
+<ul>
+<li class="fragment">pseudonymised data</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<p>Consent from participants needed for publishing and archiving</p>
+</div>
+<div class="fragment">
+<p>Can make empty informed consent form available</p>
+</div>
+<h3 id="data-involved-in-patent">Data involved in patent</h3>
+<ul>
+<li class="fragment">Can publish:
+<ul>
+<li class="fragment">all data under temporary embargo (until IP is protected)</li>
+<li class="fragment">be careful with metadata</li>
+</ul></li>
+</ul>
+<!-- end: testing rotated h2 title -->
+</section>
+<section id="publishing-data-4" class="slide level2">
 <h2>Publishing data</h2>
 <h3 id="be-fair">Be FAIR</h3>
 <p><img data-src="img/FAIRdataprinciples_foster.png" height="250"></p>
@@ -444,7 +577,7 @@ Used under a CC-BY 4.0 licence. DOI: <a href="https://doi.org/10.5281/zenodo.333
 <p>Image: https://book.fosteropenscience.eu/</p>
 </div>
 </section>
-<section id="publishing-data-1" class="slide level2 center">
+<section id="publishing-data-5" class="slide level2">
 <h2>Publishing data</h2>
 <h3 id="and-care">and CARE</h3>
 
@@ -455,7 +588,7 @@ Used under a CC-BY 4.0 licence. DOI: <a href="https://doi.org/10.5281/zenodo.333
 <p>https://www.gida-global.org/care</p>
 </div>
 </section>
-<section id="publishing-data-2" class="slide level2 center">
+<section id="publishing-data-6" class="slide level2">
 <h2>Publishing data</h2>
 <h3 id="licenses">Licenses</h3>
 
@@ -463,9 +596,55 @@ Used under a CC-BY 4.0 licence. DOI: <a href="https://doi.org/10.5281/zenodo.333
 <p>JoKalliauer; foter, CC BY-SA 3.0 <a href="https://creativecommons.org/licenses/by-sa/3.0" class="uri">https://creativecommons.org/licenses/by-sa/3.0</a>, via Wikimedia Commons</p>
 </div>
 </section>
-<section id="publishing-software" class="slide level2 center" data-background-image="img/software-license-compatibility.png" data-background-position="right" data-background-size="60%">
+<section id="publishing-data-7" class="slide level2">
+<h2>Publishing data</h2>
+<div class="columns">
+<div class="column">
+<h4 id="recommended-repositories">Recommended repositories</h4>
+<ul>
+<li class="fragment">Zenodo</li>
+<li class="fragment">4TU.ResearchData</li>
+<li class="fragment">DANS</li>
+<li class="fragment">IDR</li>
+<li class="fragment">NOMAD</li>
+</ul>
+<div class="fragment">
+<p><a href="https://www.re3data.org">Registry of Research data Repositories</a></p>
+</div>
+</div><div class="column">
+<h4 id="not-legitimate-repositories">NOT legitimate repositories</h4>
+<ul>
+<li class="fragment">GitHub (can be connected to 4TU and Zenodo)</li>
+<li class="fragment">ResearchGate/Academia-not-edu</li>
+<li class="fragment">Personal website</li>
+</ul>
+<div class="fragment">
+<p>(You can of course use these in addition to a certified repository)</p>
+</div>
+</div>
+</div>
+</section>
+<section id="publishing-data-8" class="slide level2">
+<h2>Publishing data</h2>
+<h3 id="tu.researchdata">4TU.ResearchData</h3>
+<ul>
+<li class="fragment">4TU.ResearchData consortium (includes TUDelft)</li>
+<li class="fragment">free storage up to 1TB/year (for TUDelft researchers)</li>
+<li class="fragment">international repository</li>
+<li class="fragment">publish/archive code (15+ years)
+<ul>
+<li class="fragment">open access</li>
+<li class="fragment">embargo</li>
+<li class="fragment">restricted access</li>
+</ul></li>
+<li class="fragment">DOI + citation statement</li>
+<li class="fragment">track usage (downloads, views, citation)</li>
+<li class="fragment">figshare in a TUDelft wrapper</li>
+</ul>
+</section>
+<section id="publishing-software" class="slide level2">
 <h2>Publishing software</h2>
-<p>TU Delft policy on research software</p>
+<p>TU Delft <a href="https://zenodo.org/record/4629662#.Y4d-hH3MJhE">policy</a> on research software</p>
 <ul>
 <li class="fragment">Can it be made open source?
 <ul>
@@ -479,36 +658,94 @@ Used under a CC-BY 4.0 licence. DOI: <a href="https://doi.org/10.5281/zenodo.333
 <li class="fragment">If published in 4TU.ResearchData, this is done automatically</li>
 </ul></li>
 </ul>
-<div style="position: fixed; font-size: x-small; font-weight: lighter; bottom: 0; right: 0;">
+</section>
+<section id="publishing-software-1" class="slide level2">
+<h2>Publishing software</h2>
+<p>License compatibility</p>
+
+<img data-src="img/software-license-compatibility.png" class="r-stretch"><div style="position: fixed; font-size: x-small; font-weight: lighter; bottom: 0; right: 0;">
 <p>Bazuine, Merlijn. (2021). TU Delft Guidelines on Research Software: Licensing, Registration and Commercialisation. Zenodo. <a href="https://doi.org/10.5281/zenodo.4629635" class="uri">https://doi.org/10.5281/zenodo.4629635</a></p>
 </div>
 </section>
-<section id="publishing-software-1" class="slide level2 center">
+<section id="publishing-software-2" class="slide level2">
 <h2>Publishing software</h2>
 <h3 id="commercial-vs.-open-source">Commercial vs.&nbsp;open source</h3>
-<p>Can co-exist (e.g.&nbsp;RStudio, NextCloud, ownCloud, Linux distros)</p>
+<p>Can co-exist (e.g.&nbsp;RStudio, NextCloud, ownCloud, Linux distros, WordPress)</p>
 <ul>
-<li class="fragment">Software is open source, maintenance and support is profitable</li>
+<li class="fragment">Software is free and open source, maintenance and support is paid</li>
 <li class="fragment">Free for individuals, commercial licenses</li>
 <li class="fragment">Free basic model, proprietary advanced usage</li>
 </ul>
 </section>
-<section id="be-fair-2" class="slide level2 center" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Be FAIR 2</h2>
-<p><img data-src="img/fair-data-f.png" class="absolute" style="top: 0px; left: 10px; height: 450px; "></p>
-<p><img data-src="img/fair-data-a.png" class="absolute" style="top: 0px; right: 10px; "></p>
-<p><img data-src="img/fair-data-i.png" class="absolute" style="bottom: 0px; right: 10px; "></p>
-<p><img data-src="img/fair-data-r.png" class="absolute" style="bottom: 0px; right: 0px; "></p>
+<section id="publishing-protocols" class="slide level2">
+<h2>Publishing protocols</h2>
+<p>protocols.io</p>
+<ul>
+<li class="fragment">publish detailed protocols
+<ul>
+<li class="fragment">experiments</li>
+<li class="fragment">computations</li>
+</ul></li>
+<li class="fragment">assign DOI for publication</li>
+<li class="fragment">update with new version</li>
+</ul>
 </section>
-<section id="reproducibility" class="slide level2 center">
+<section id="reproducibility" class="slide level2" data-background-image="img/ReproducibleJourney.jpg" data-background-position="right" data-background-size="40%">
 <h2>Reproducibility</h2>
-<p>Going the extra mile</p>
-<p><img data-src="img/reproducible-research-spectrum.png" style="border: 0.2em solid black;"></p>
+<div class="columns">
+<div class="column" style="width:80%;">
+<p><strong>Reproducible:</strong> Reproducing results using the same methods and data</p>
+<p><strong>Replicable:</strong> Reproducing results using the same methods but DIFFERENT data</p>
+<p><span class="fragment">Main causes of failure to reproduce research:</span></p>
+<ul>
+<li class="fragment">Selective reporting</li>
+<li class="fragment">Methods, code unavailable</li>
+<li class="fragment">data unavailable</li>
+</ul>
+<p><span class="fragment"><a href="https://doi.org/10.1038/533452a" class="uri">https://doi.org/10.1038/533452a</a></span></p>
+<p><span class="fragment">Another barrier to reproducibility is the use of proprietary software and file formats (Not all institutions have a MatLab license - very few individuals)</span></p>
+</div>
+</div>
 <div style="position: fixed; font-size: x-small; font-weight: lighter; bottom: 0; right: 0;">
+<p>This illustration is created by Scriberia with The Turing Way community.<br>
+Used under a CC-BY 4.0 licence. DOI: <a href="https://doi.org/10.5281/zenodo.3332807">10.5281/zenodo.3332807</a></p>
+</div>
+</section>
+<section id="reproducibility-1" class="slide level2">
+<h2>Reproducibility</h2>
+<p>Going the extra mile for science! 🥼</p>
+
+<img data-src="img/reproducible-research-spectrum.png" style="border: 0.2em solid black;" class="r-stretch"><div style="position: fixed; font-size: x-small; font-weight: lighter; bottom: 0; right: 0;">
 <p>By Marwick et al.&nbsp;2017 (<a href="https://doi.org/10.31235/osf.io/72n8g" class="uri">https://doi.org/10.31235/osf.io/72n8g</a>)</p>
 </div>
-<p><img src="img/TUDelft_logo_rgb.png" class="slide-logo"></p>
-<div class="footer footer-default">
+</section>
+<section id="steps-towards-open-science" class="slide level2 scrollable">
+<h2>Steps towards Open Science</h2>
+<p>NOT everything everywhere all at once - start small</p>
+<ul>
+<li class="fragment">transparency
+<ul>
+<li class="fragment">thorough documentation (data collection, methodology, analysis steps)</li>
+<li class="fragment">analysis outputs (from SPSS, MatLab, etc.)</li>
+<li class="fragment">raw data</li>
+</ul></li>
+<li class="fragment">research compendium
+<ul>
+<li class="fragment">documentation (README)</li>
+<li class="fragment">code</li>
+<li class="fragment">data (raw and processed)</li>
+</ul></li>
+<li class="fragment">executable article
+<ul>
+<li class="fragment">documentation (README)</li>
+<li class="fragment">code</li>
+<li class="fragment">data</li>
+<li class="fragment">computational environement (Docker, Binder, etc.)</li>
+</ul></li>
+</ul>
+<p><a href="https://doi.org/10.5281/zenodo.6615276">Removing Barriers to Reproducible Research in Archaeology</a></p>
+
+<img src="img/TUDelft_logo_rgb.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p>link to slides</p>
 </div>
 </section></section>
@@ -593,7 +830,7 @@ Used under a CC-BY 4.0 licence. DOI: <a href="https://doi.org/10.5281/zenodo.333
         disableLayout: false,
 
         // Vertical centering of slides
-        center: true,
+        center: false,
 
         // Enables touch navigation on devices with touch input
         touch: true,
@@ -761,7 +998,24 @@ Used under a CC-BY 4.0 licence. DOI: <a href="https://doi.org/10.5281/zenodo.333
         button.classList.add('code-copy-button-checked');
         var currentTitle = button.getAttribute("title");
         button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
         setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
           button.setAttribute("title", currentTitle);
           button.classList.remove('code-copy-button-checked');
         }, 1000);
@@ -791,31 +1045,50 @@ Used under a CC-BY 4.0 licence. DOI: <a href="https://doi.org/10.5281/zenodo.333
       for (var i=0; i<noterefs.length; i++) {
         const ref = noterefs[i];
         tippyHover(ref, function() {
-          let href = ref.getAttribute('href');
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
           return note.innerHTML;
         });
       }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
       var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
       for (var i=0; i<bibliorefs.length; i++) {
         const ref = bibliorefs[i];
-        const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-        tippyHover(ref, function() {
-          var popup = window.document.createElement('div');
-          cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
-            }
-            popup.appendChild(citeDiv);
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
           });
-          return popup.innerHTML;
-        });
+        }
       }
     });
     </script>
