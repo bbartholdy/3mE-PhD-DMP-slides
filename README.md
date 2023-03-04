@@ -1,5 +1,7 @@
 # 3mE-PhD-DMP-slides
 
+**Repo moved to <https://github.com/3mE-Data-Stewards/3mE-DMP-training-slides>**
+
 Introduction to research data management for PhD students at the 3mE faculty.
 
 The course website can be found here: <3me-dmp-training.netlify.app/>
