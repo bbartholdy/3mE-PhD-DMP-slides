@@ -1,6 +1,5 @@
 /*--  scss:defaults --*/
 
-
 /*delft blue: 
     CMYK: (100%, 0%, 0%, 0%)
     RGB: (0, 166, 214)
@@ -16,6 +15,10 @@ black
 
 additional colours: https://www.tudelft.nl/en/tu-delft-corporate-design/components/colour
 */
+
+$blue: #00A6D6;
+$white: #ffffff;
+$black: #000000;
 
 // Include theme-specific fonts
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&display=swap');
@@ -35,9 +38,9 @@ $headingTextShadow: none;
 $headingTextTransform: none;
 
 // colours
-$backgroundColor: #fff;
-$mainColor: #000000;
-$headingColor: #00A6D6;
+$backgroundColor: $white;
+$mainColor: $black;
+$headingColor: $blue;
 $link-color: #A50034;
 $code-color: #009B77;
 $light-bg-code-color: #EC6842;
